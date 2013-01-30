@@ -1,22 +1,22 @@
-roboetry
-========
+     // roboetry
+     ========
 
-UrbiScript code to control a typing robot on a linux system using Robotic/Dynamixel servos.
+     UrbiScript code to control a typing robot on a linux system using Robotic/Dynamixel servos. Callibrated to a ThinkPad X60 12" laptop.
 
 
-//ROBOETRY: Steph Horak & Philip Dickinson
-//Written by P Dickinson, commented by S Horak
+     //ROBOETRY: Steph Horak & Philip Dickinson
+     //Written by P Dickinson, commented by S Horak
 
 load("/home/student/dev/urbi/urbi-for-bioloid/dynamixel.u");
 load("/home/student/dev/urbi/scripts/armPosition.u");
 var Global.d = Dynamixel.new;
 
-//load the above files. armPosition.u will allow us to setup the dictionary. The positions of the dictionary are set in relation to a ThinkPad X Series.
+     //load the above files. armPosition.u will allow us to setup the dictionary. The positions of the dictionary are set in relation to a ThinkPad X Series.
+     //this is the contructor 
+     //initiate each servo and name it. In this instance L[name] referring to joints in left arm, R[name] referring to joints in right arm.
 
 class Thing
    {
-    //this is the contructor 
-    //initiate each servo and name it. In this instance L[name] referring to joints in left arm, R[name] referring to joints in right arm.
 function init() {
   var this.lshoulder = Dynamixel.Device.new(d,5,Dynamixel.DeviceDesc.AX12); //instantiate each servo
   var this.lelbow = Dynamixel.Device.new(d,12,Dynamixel.DeviceDesc.AX12);
